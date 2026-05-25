@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: checkout code
-          uses: action/checkout@v2
+          uses: actions/checkout@v2
         - name: extract_data exicuted
           run: python extract_data.py
     transform_data_job:
@@ -18,7 +18,7 @@ jobs:
         needs: extract_data_job
         steps:
         - name: checkout code
-          uses: action/checkout@v2
+          uses: actions/checkout@v2
         - name: transform_data exicuted
           run: python transform_data.py
     load_data_job:
@@ -26,6 +26,6 @@ jobs:
         needs: transform_data_job
         steps:
         - name: checkout code
-          uses: action/checkout@v2
+          uses: actions/checkout@v2
         - name: load_data exicuted  
           run: python transform_data.py
